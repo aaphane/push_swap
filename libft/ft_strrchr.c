@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:13:44 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:13:49 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+char	*ft_strrchr(const char *s, int c)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	int		i;
+	char	find;
+	char	*str;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	str = (char *)s;
+	find = (char)c;
+	i = ft_strlen(s);
+	if (find == 0)
+		return (str + i);
+	while (0 <= i)
+	{
+		if (str[i] == find)
+			return (str + i);
+		i--;
+	}
+	return (NULL);
+}

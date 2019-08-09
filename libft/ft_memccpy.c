@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:48:47 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 14:48:52 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	unsigned char	*dest;
+	unsigned char	*src;
+	unsigned int	i;
+	unsigned char	ptr;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	dest = (unsigned char*)s1;
+	src = (unsigned char*)s2;
+	ptr = (unsigned char)c;
+	i = 0;
+	if (!s1 || !s2)
+		return (s1);
+	while (i < n)
+	{
+		dest[i] = src[i];
+		if (dest[i] == ptr)
+			return (dest + i + 1);
+		i++;
+	}
+	return (NULL);
+}

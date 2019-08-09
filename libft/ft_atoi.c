@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:41:19 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/28 12:16:35 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+int		ft_atoi(const char *str)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	long	i;
+	int		num;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	if (!str)
+		return (0);
+	while ((*str >= '\t' && *str <= '\r') || (*str == 32))
+		str++;
+	if (*str == '-')
+		num = -1;
+	else
+		num = 1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && ft_isdigit(*str))
+		i = (i * 10) + (*str++ - '0');
+	if (i < 0 && num == 1)
+		return (-1);
+	if (i < 0)
+		return (0);
+	return (i * num);
+}

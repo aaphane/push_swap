@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:16:24 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:16:29 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+char	*ft_strstr(const char *str, const char *needle)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	int i;
+	int j;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	if (str[i] == '\0' && needle[i] == '\0')
+		return ((char*)str);
+	while (str[i] != '\0')
+	{
+		j = 0;
+		while (needle[j] != '\0' && str[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+		{
+			return ((char*)str + i);
+		}
+		i++;
+	}
+	return (0);
+}

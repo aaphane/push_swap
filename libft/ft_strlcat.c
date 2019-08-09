@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:07:39 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:07:43 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	size_t i;
+	size_t dst_len;
+	size_t src_len;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	dst_len = ft_strlen(dst);
+	while (src[i] != '\0' && dst_len + i + 1 < dstsize)
+	{
+		dst[dst_len + i] = src[i];
+		i++;
+	}
+	dst[dst_len + i] = '\0';
+	src_len = ft_strlen(src);
+	if (dst_len > dstsize)
+		return (src_len + dstsize);
+	else
+		return (src_len + dst_len);
+}

@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:06:59 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:07:05 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	char	*str;
+	int		i;
+	int		j;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	str = (char*)malloc(sizeof(*str) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	i = 0;
+	j = 0;
+	if (!str)
+		return (NULL);
+	if (!s1 || !s2)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
+}

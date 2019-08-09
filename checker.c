@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft2/libft.h"
+#include "libft/libft.h"
 #include "push.h"
+#include "sa.c"
 
 int ft_validnumber(char *str)
 {
@@ -27,31 +28,6 @@ int ft_validnumber(char *str)
 		i++;
 	}
 	return (0);
-}
-
-long long		ft_atoll(const char *str)
-{
-	long	i;
-	long long		num;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while ((*str >= '\t' && *str <= '\r') || (*str == 32))
-		str++;
-	if (*str == '-')
-		num = -1;
-	else
-		num = 1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && ft_isdigit(*str))
-		i = (i * 10) + (*str++ - '0');
-	if (i < 0 && num == 1)
-		return (-1);
-	if (i < 0)
-		return (0);
-	return (i * num);
 }
 
 int ft_numboverflow(char *str)
@@ -118,11 +94,9 @@ int main(int argc, char *argv[])
 	int i;
 	int j;
 	int k;
-	int l;
 	int *namba;
 	char **temp;
 	t_node *stack_a;
-	t_node *stack_b;
 
 	i = 1;
 	k = 0;
@@ -143,7 +117,8 @@ int main(int argc, char *argv[])
 				else
 				{
 					free(namba);
-					ft_putstr("Error\n");
+					ft_putstr("\033[0;31m");
+					ft_putstr("ERROR\n");
 					exit(0);
 				}
 				j++;
@@ -154,17 +129,24 @@ int main(int argc, char *argv[])
 		if (ft_duplicatenum(namba, k) == -1)
 		{
 			free(namba);
-			ft_putstr("Error\n");
+			ft_putstr("\033[0;31m");
+			ft_putstr("ERROR\n");
 			exit(0);
 		}
 		i = 0;
+		ft_putchar('\n');
+		ft_putstr("\033[0;32m");
 		ft_putstr("Stack A\tStack B");
+		ft_putchar('\n');
 		ft_putchar('\n');
 		ft_add_to_stack(namba, k, &stack_a);
 		ft_strdel(temp);
+		ft_putstr("\033[0;33m");
 		ft_print_list(stack_a);
-		ra();
-		ft_print_list
+		sa(stack_a);
+		ft_putchar('\n');
+		ft_putchar('\n');
+		ft_print_list(stack_a);
 
 	}
 	return (0);

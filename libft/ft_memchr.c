@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:50:00 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 14:50:05 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	unsigned char	*str;
+	unsigned char	ptr;
+	int				i;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	str = (unsigned char*)s;
+	ptr = (unsigned char)c;
+	if (!s)
+		return (NULL);
+	while (n--)
+	{
+		if (str[i] == ptr)
+			return (str + i);
+		i++;
+	}
+	return (NULL);
+}

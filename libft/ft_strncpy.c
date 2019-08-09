@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:11:04 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:11:09 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	size_t	i;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	while (i < n && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
+}

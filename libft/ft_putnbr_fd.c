@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:58:59 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 14:59:05 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+void	ft_putnbr_fd(int n, int fd)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
-
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = n * -1;
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+		else
+			ft_putchar_fd(n + '0', fd);
+	}
+}

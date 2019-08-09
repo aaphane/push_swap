@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 15:00:59 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 15:01:05 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+char	*ft_strcat(char *dest, const char *src)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	int i;
+	int j;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	i = 0;
+	j = 0;
+	if (dest || src)
+	{
+		while (dest[i] != '\0')
+		{
+			i++;
+		}
+		while (src[j] != '\0')
+		{
+			dest[i + j] = src[j];
+			j++;
+		}
+		dest[i + j] = '\0';
+		return (dest);
+	}
+	return (NULL);
+}

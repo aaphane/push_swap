@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:50:45 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 14:51:15 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	str1 = (unsigned char*)s1;
+	str2 = (unsigned char*)s2;
+	i = 0;
+	if (s1 == s2)
+		return (0);
+	if (!s1)
+		return (str2[0] * -1);
+	if (!s2)
+		return (str1[0]);
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	return (0);
+}

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft2/libft.h"
+#include "libft/libft.h"
 #include "push.h"
 
 void    ft_add_to_stack(int *nums, int size, t_node **current)

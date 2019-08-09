@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft2/libft.h"
+#include "libft/libft.h"
 #include "push.h"
 
 void        ft_print_list(t_node *head)

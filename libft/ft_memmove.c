@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/09 14:26:15 by aaphane          ###   ########.fr       */
+/*   Created: 2019/06/27 14:53:45 by aaphane           #+#    #+#             */
+/*   Updated: 2019/06/27 14:53:50 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#include "libft.h"
 
-typedef struct s_node
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-} t_node;
+	char *charsrc;
+	char *chardst;
 
-void        ft_print_list(t_node *head);
-void        ft_add_to_stack(int *nums, int size, t_node **current);
-#endif
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	charsrc = (char*)src;
+	chardst = (char*)dst;
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			chardst[len - 1] = charsrc[len - 1];
+			len--;
+		}
+	}
+	return (dst);
+}
