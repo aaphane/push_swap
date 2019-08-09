@@ -10,58 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft2/libft.h"
+#include "libft2/libft.h"
+#include "push.h"
 
-typedef struct s_node
+void    ft_add_to_stack(int *nums, int size, t_node **current)
 {
-    int x;
-    struct s_node *next;
-    struct s_node *prev;
-}   t_node;
-
-typedef struct s_head
-{
-    t_node  *start;
-    size_t  count;
-}           t_head;
-
-void        ft_first_stack(int *nums, t_node **current)
-{
-    t_head *head = (t_head *)malloc(sizeof(t_head));
-    t_node *temp;
+    t_node *head;
     int i;
 
-    temp = NULL;
-    i = 1;
-    head->start = NULL;
-    head->count = 0;
-    *current = head->start; //why? head->start = *current;
-    while(head->start) //fix and make sense
+    i = 0;
+    head = NULL;
+
+    while (i < size)
     {
         t_node *node;
         node = (struct s_node *)malloc(sizeof(struct s_node));
-        node->x = ft_atoi(nums[i - 1]);
+        node->x = nums[i];
         node->next = NULL;
         node->prev = NULL;
-        if(*current == NULL)
+        if (*current == NULL)
         {
-            head->start = node;
+            head = node;
             *current = node;
-            head->count++;
         }
         else
         {
             (*current)->next = node;
             node->prev = *current;
-            current = node;
-            head->count++;
+            *current = node;
         }
         i++;
     }
-
+    *current = head;
 }
-
-int         main(int argc, char **argv)
-{
-    t_node **stack_a;
-    t_node **stack_b;

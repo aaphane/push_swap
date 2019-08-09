@@ -11,122 +11,161 @@
 /* ************************************************************************** */
 
 #include "libft2/libft.h"
-#include "includes/stack.c"
+#include "push.h"
 
-typedef struct s_node
+int ft_validnumber(char *str)
 {
-	int x;
-	struct s_node *next;
-	struct s_node *prev;
-}   t_node;
-
-int		ft_validnumber(char *str)
-{
-	int	i;
+	int i;
 
 	i = 0;
 	if (str[0] == '-')
 		i++;
-	while(str[i])
+	while (str[i])
 	{
-		if(((ft_isdigit(str[i])) != 1))
-			return(0); //not fine
+		if (((ft_isdigit(str[i])) != 1))
+			return (-1);
 		i++;
 	}
-	return(1);
+	return (0);
 }
 
-
-int		ft_numboverflow(long nb)
+long long		ft_atoll(const char *str)
 {
-	if (nb >= -2147483648 && nb <= 2147483647)
-		return(1);
+	long	i;
+	long long		num;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while ((*str >= '\t' && *str <= '\r') || (*str == 32))
+		str++;
+	if (*str == '-')
+		num = -1;
+	else
+		num = 1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && ft_isdigit(*str))
+		i = (i * 10) + (*str++ - '0');
+	if (i < 0 && num == 1)
+		return (-1);
+	if (i < 0)
+		return (0);
+	return (i * num);
+}
+
+int ft_numboverflow(char *str)
+{
+	int ai;
+	long long all;
+
+	ai = ft_atoi(str);
+	all = ft_atoll(str);
+	if (ai == all)
+		return (0);
 	else
 	{
-		return(0);
+		return (-1);
 	}
-
 }
 
-int		ft_validcommand(char *str)
+int ft_validcommand(char *str)
 {
 	int i;
 	int j;
+	char **command;
 
 	j = 0;
 	i = 0;
-	char *command[] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", "rra", "rrb", "rrr"}; //norm
 
-	while(command[i])
+	str = "sa sb ss pa pb ra rb  rr  rra rrb rrr";
+
+	command = ft_strsplit(str, ' ');
+
+	while (command[i])
 	{
 		if (ft_strcmp(command[i], str) == 0)
-			return(1);
+			return (-1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-int		ft_duplicatenum(int arr[])
+int ft_duplicatenum(int *arr, int size)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while(arr[i]) //error...i < array_size
+	while (i < size)
 	{
 		j = i + 1;
-		while(arr[j]) //same
+		while (j < size)
 		{
 			if (arr[j] == arr[i] && i != j)
-				return(0);
+				return (-1);
 			j++;
 		}
 		i++;
 	}
-	return(1);
+	return (0);
 }
 
 
-int		main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int		i;
-	int		j;
-	int		namba;  //int *namba = malloc
-	char 	**temp;
-	t_node	**stack_a;
 
+	int i;
+	int j;
+	int k;
+	int l;
+	int *namba;
+	char **temp;
+	t_node *stack_a;
+	t_node *stack_b;
 
 	i = 1;
-	if(argc > 1)
+	k = 0;
+
+	namba = (int *)malloc(sizeof(int) * (argc - 1));
+	if (argc > 1)
 	{
-		while(argc > i)
+		while (argc > i)
 		{
 			temp = ft_strsplit(argv[i], ' ');
 			j = 0;
 			while (temp[j])
 			{
-				if(ft_validnumber(temp[j]))
+				if (ft_validnumber(temp[j]) == 0 && ft_numboverflow(temp[j]) == 0)
 				{
-					namba = ft_atoi(temp[j]); //namba[k]
-					ft_first_stack(&namba, stack_a);
+					namba[k] = ft_atoi(temp[j]);
 				}
 				else
 				{
-					if (!(stack_a))
-						ft_putstr("Invalid number"); //Error\n fd = 2
-					else
-					{
-						ft_memdel(stack_a);
-						ft_putstr("Invalid number"); //Error\n fd = 2
-
-					}
+					free(namba);
+					ft_putstr("Error\n");
+					exit(0);
 				}
 				j++;
+				k++;
 			}
 			i++;
 		}
+		if (ft_duplicatenum(namba, k) == -1)
+		{
+			free(namba);
+			ft_putstr("Error\n");
+			exit(0);
+		}
+		i = 0;
+		ft_putstr("Stack A\tStack B");
+		ft_putchar('\n');
+		ft_add_to_stack(namba, k, &stack_a);
 		ft_strdel(temp);
-	}
-	return(0);
-}
+		ft_print_list(stack_a);
+		ra();
+		ft_print_list
 
+	}
+	return (0);
+}
