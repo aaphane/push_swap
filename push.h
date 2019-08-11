@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#ifndef PUSH_H
+# define PUSH_H
 
 typedef struct s_node
 {
@@ -21,5 +21,7 @@ typedef struct s_node
 } t_node;
 
 void        ft_print_list(t_node *head);
+void        ft_add_to_stack(int *nums, int size, t_node **current);
+void        ft_swap_a(t_node *head_copy);
 void        ft_add_to_stack(int *nums, int size, t_node **current);
 #endif

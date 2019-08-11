@@ -12,7 +12,6 @@
 
 #include "libft/libft.h"
 #include "push.h"
-#include "sa.c"
 
 int ft_validnumber(char *str)
 {
@@ -136,14 +135,22 @@ int main(int argc, char *argv[])
 		i = 0;
 		ft_putchar('\n');
 		ft_putstr("\033[0;32m");
-		ft_putstr("Stack A\tStack B");
+		ft_putstr("Stack A\t\tStack B");
 		ft_putchar('\n');
 		ft_putchar('\n');
 		ft_add_to_stack(namba, k, &stack_a);
 		ft_strdel(temp);
 		ft_putstr("\033[0;33m");
 		ft_print_list(stack_a);
-		sa(stack_a);
+		ft_swap_a(stack_a);
+		ft_putchar('\n');
+		ft_putchar('\n');
+		ft_putstr("\033[0;32m");
+		ft_putstr("After swapping...");
+		ft_putchar('\n');
+		ft_putchar('\n');
+		ft_putstr("Stack A\t\tStack B");
+		ft_putstr("\033[0;36m");
 		ft_putchar('\n');
 		ft_putchar('\n');
 		ft_print_list(stack_a);
