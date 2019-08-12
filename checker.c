@@ -142,11 +142,11 @@ int main(int argc, char *argv[])
 		ft_strdel(temp);
 		ft_putstr("\033[0;33m");
 		ft_print_list(stack_a);
-		ft_swap_a(stack_a);
+		ft_reverse_rotate(stack_a);
 		ft_putchar('\n');
 		ft_putchar('\n');
 		ft_putstr("\033[0;32m");
-		ft_putstr("After swapping...");
+		ft_putstr("After rotating...");
 		ft_putchar('\n');
 		ft_putchar('\n');
 		ft_putstr("Stack A\t\tStack B");
