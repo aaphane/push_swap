@@ -6,7 +6,7 @@
 #    By: aaphane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/27 15:22:32 by aaphane           #+#    #+#              #
-#    Updated: 2019/08/19 13:46:35 by aaphane          ###   ########.fr        #
+#    Updated: 2019/08/19 14:09:05 by aaphane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,4 +136,5 @@ clean:
 	rm -f $(OBJECTS)
 fclean: clean
 	rm -f $(NAME)
+	rm -rf get_next_line.h.gch
 re: fclean all
