@@ -6,7 +6,7 @@
 #    By: aaphane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/27 15:22:32 by aaphane           #+#    #+#              #
-#    Updated: 2019/06/28 12:19:32 by aaphane          ###   ########.fr        #
+#    Updated: 2019/08/19 13:46:35 by aaphane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,9 @@ SOURCES =	ft_strncat.c\
 			ft_strncpy.c\
 			ft_strcmp.c\
 			ft_atoll.c\
-			ft_swap.c
+			ft_swap.c\
+			get_next_line.c\
+			ft_getnewline.c
 OBJECTS =	ft_atoi.o\
 		  	ft_memalloc.o\
 		  	ft_putchar.o\
@@ -120,7 +122,9 @@ OBJECTS =	ft_atoi.o\
 		  	ft_strncat.o\
 		  	ft_strstr.o\
 			 ft_atoll.o\
-			 ft_swap.o
+			 ft_swap.o\
+			get_next_line.o\
+			ft_getnewline.o
 all: $(NAME)
 
 $(NAME):

@@ -6,7 +6,7 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 15:19:55 by aaphane           #+#    #+#             */
-/*   Updated: 2019/07/18 09:55:45 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/08/19 13:48:39 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ void			ft_putnbr(int nbr);
 char			*ft_strcpy(char *dst, const char *src);
 long long		ft_atoll(const char *str);
 void			ft_swap(int *a, int *b);
+int				ft_getnewline(char **str, char **line, int fd, int reader);
 
 #endif
