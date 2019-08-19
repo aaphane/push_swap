@@ -70,6 +70,6 @@ void        ft_apply_instructions(char *str)
     }
     else
     {
-        ft_putendl("ERROR");
+        return ;
     }
 }

@@ -59,7 +59,7 @@ int ft_validcommand(char *str)
 
 	while (command[i])
 	{
-		if (ft_strcmp(command[i], str) == 0)
+		if (ft_strcmp(command[i], str) != 0)
 			return (-1);
 		i++;
 	}
@@ -86,13 +86,13 @@ int ft_duplicatenum(int *arr, int size)
 	return (0);
 }
 
-
 int main(int argc, char *argv[])
 {
 	int i;
 	int j;
 	int k;
 	int *namba;
+	char **line;
 	char **temp;
 	t_node *stack_a;
 	t_node *stack_b = NULL;
@@ -133,10 +133,21 @@ int main(int argc, char *argv[])
 			exit(0);
 		}
 		i = 0;
-		// while(get_next_line(0, &line) == 1)
-		// {
 
-		// }
+		ft_putendl("Input command, indian boii..");
+		while (get_next_line(0, &line) == 1)
+		{
+			printf("line = %s\n", line);
+			if (ft_validcommand(&line) == 0)
+			{
+				ft_apply_instructions(&line);
+			}
+			else
+			{
+				ft_putendl("ERROR: Invalid command");
+				return(-1);
+			}
+		}
 		ft_putchar('\n');
 		ft_putstr("\033[0;32m");
 		ft_putstr("Stack A");
