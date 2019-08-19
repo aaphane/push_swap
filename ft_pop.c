@@ -13,17 +13,18 @@
 #include "libft/libft.h"
 #include "push.h"
 
-int     ft_pop(t_node *head_copy)
+int     ft_pop(t_node **head_copy)
 {
     t_node *current;
     int     temp;
 
-    current = head_copy;
+    current = *head_copy;
     temp = current->x;
-    head_copy = head_copy->next;
-    head_copy->prev = NULL;
+    *head_copy = (*head_copy)->next;
+    (*head_copy)->prev = NULL;
     current->next = NULL;
     free(current);
+ //   head_copy = head_copy->next;
 
     return(temp);
 }
