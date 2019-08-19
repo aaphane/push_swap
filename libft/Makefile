@@ -65,7 +65,8 @@ SOURCES =	ft_strncat.c\
 			ft_tolower.c\
 			ft_strncpy.c\
 			ft_strcmp.c\
-			ft_atoll.c
+			ft_atoll.c\
+			ft_swap.c
 OBJECTS =	ft_atoi.o\
 		  	ft_memalloc.o\
 		  	ft_putchar.o\
@@ -118,7 +119,8 @@ OBJECTS =	ft_atoi.o\
 		  	ft_strequ.o\
 		  	ft_strncat.o\
 		  	ft_strstr.o\
-			 ft_atoll.o
+			 ft_atoll.o\
+			 ft_swap.o
 all: $(NAME)
 
 $(NAME):

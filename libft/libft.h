@@ -76,5 +76,6 @@ void			ft_putchar(char c);
 void			ft_putnbr(int nbr);
 char			*ft_strcpy(char *dst, const char *src);
 long long		ft_atoll(const char *str);
+void			ft_swap(int *a, int *b);
 
 #endif
