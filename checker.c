@@ -46,24 +46,33 @@ int ft_numboverflow(char *str)
 
 int ft_validcommand(char *str)
 {
-	int i;
-	int j;
-	char **command;
-
-	j = 0;
-	i = 0;
-
-	str = "sa sb ss pa pb ra rb  rr  rra rrb rrr";
-
-	command = ft_strsplit(str, ' ');
-
-	while (command[i])
+	puts(str);
+	if (ft_strcmp("sa", str) == 0)
+		return (0);
+	else if (ft_strcmp("sb", str) == 0)
+		return (0);
+	else if (ft_strcmp("ss", str) == 0)
+		return (0);
+	else if (ft_strcmp("pa", str) == 0)
+		return (0);
+	else if (ft_strcmp("pb", str) == 0)
+		return (0);
+	else if (ft_strcmp("ra", str) == 0)
+		return (0);
+	else if (ft_strcmp("rb", str) == 0)
+		return (0);
+	else if (ft_strcmp("rr", str) == 0)
+		return (0);
+	else if (ft_strcmp("rra", str) == 0)
+		return (0);
+	else if (ft_strcmp("rrb", str) == 0)
+		return (0);
+	else if (ft_strcmp("rrr", str) == 0)
+		return (0);
+	else
 	{
-		if (ft_strcmp(command[i], str) != 0)
-			return (-1);
-		i++;
+		return (-1);
 	}
-	return (0);
 }
 
 int ft_duplicatenum(int *arr, int size)
@@ -137,7 +146,7 @@ int main(int argc, char *argv[])
 		ft_putendl("Input command, indian boii..");
 		while (get_next_line(0, &line) == 1)
 		{
-			printf("line = %s\n", line);
+				printf("line = %s\n", line);
 			if (ft_validcommand(&line) == 0)
 			{
 				ft_apply_instructions(&line);
@@ -145,7 +154,7 @@ int main(int argc, char *argv[])
 			else
 			{
 				ft_putendl("ERROR: Invalid command");
-				return(-1);
+				return (-1);
 			}
 		}
 		ft_putchar('\n');

@@ -78,5 +78,6 @@ char			*ft_strcpy(char *dst, const char *src);
 long long		ft_atoll(const char *str);
 void			ft_swap(int *a, int *b);
 int				ft_getnewline(char **str, char **line, int fd, int reader);
+int				get_next_line(const int fd, char **line);
 
 #endif
