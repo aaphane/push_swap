@@ -6,7 +6,7 @@
 #    By: aaphane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/19 07:51:06 by aaphane           #+#    #+#              #
-#    Updated: 2019/08/19 07:51:21 by aaphane          ###   ########.fr        #
+#    Updated: 2019/08/20 08:37:10 by aaphane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ OBJECTS =	ft_build_stack.o\
 all: $(NAME)
 
 $(NAME):
+	make -C libft/
 	$(CC) $(CFLAGS) -c $(SOURCES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)

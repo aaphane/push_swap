@@ -46,33 +46,21 @@ int ft_numboverflow(char *str)
 
 int ft_validcommand(char *str)
 {
-	puts(str);
-	if (ft_strcmp("sa", str) == 0)
-		return (0);
-	else if (ft_strcmp("sb", str) == 0)
-		return (0);
-	else if (ft_strcmp("ss", str) == 0)
-		return (0);
-	else if (ft_strcmp("pa", str) == 0)
-		return (0);
-	else if (ft_strcmp("pb", str) == 0)
-		return (0);
-	else if (ft_strcmp("ra", str) == 0)
-		return (0);
-	else if (ft_strcmp("rb", str) == 0)
-		return (0);
-	else if (ft_strcmp("rr", str) == 0)
-		return (0);
-	else if (ft_strcmp("rra", str) == 0)
-		return (0);
-	else if (ft_strcmp("rrb", str) == 0)
-		return (0);
-	else if (ft_strcmp("rrr", str) == 0)
-		return (0);
-	else
+	char **command;
+	int i;
+	char *s;
+
+	i = 0;
+	s = "sa sb ss ra rb rr pa pb rra rrb rrr";
+
+	command = ft_strsplit(s, ' ');
+	while(command[i])
 	{
-		return (-1);
+		if(ft_strcmp(command[i], str) == 0)
+			return(0);
+		i++;
 	}
+	return
 }
 
 int ft_duplicatenum(int *arr, int size)
@@ -101,7 +89,7 @@ int main(int argc, char *argv[])
 	int j;
 	int k;
 	int *namba;
-	char **line;
+	char *line;
 	char **temp;
 	t_node *stack_a;
 	t_node *stack_b = NULL;
@@ -126,7 +114,7 @@ int main(int argc, char *argv[])
 				{
 					free(namba);
 					ft_putstr("\033[0;31m");
-					ft_putstr("ERROR\n");
+					ft_putstr("ERROR: Input is not a vild number i.e '4-', letter, etc\n");
 					exit(0);
 				}
 				j++;
@@ -138,21 +126,22 @@ int main(int argc, char *argv[])
 		{
 			free(namba);
 			ft_putstr("\033[0;31m");
-			ft_putstr("ERROR\n");
+			ft_putstr("ERROR: Duplicate numbers not allowed\n");
 			exit(0);
 		}
 		i = 0;
 
-		ft_putendl("Input command, indian boii..");
+		ft_putendl("\nInput command:\n");
 		while (get_next_line(0, &line) == 1)
 		{
-				printf("line = %s\n", line);
-			if (ft_validcommand(&line) == 0)
+			//	printf("line = %s\n", line);
+			if (ft_validcommand(line) == 0)
 			{
-				ft_apply_instructions(&line);
+				ft_apply_instructions(line);
 			}
 			else
 			{
+				ft_putstr("\033[0;31m");
 				ft_putendl("ERROR: Invalid command");
 				return (-1);
 			}

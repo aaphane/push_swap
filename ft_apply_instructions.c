@@ -21,6 +21,7 @@ void        ft_apply_instructions(char *str)
     stack_a = NULL;
     stack_b = NULL;
 
+    //ft_putstr("Andries Aphane");
     if (ft_strcmp(str, "sa") == 0)
     {
         ft_swap_nodes(stack_a);
