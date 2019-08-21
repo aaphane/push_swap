@@ -14,6 +14,7 @@ int ft_duplicatenum(int *arr, int size)
 		{
 			if (arr[j] == arr[i] && i != j)
 			{
+				ft_putstr("\033[0;31m");
 				ft_putstr("ERROR: Duplicate numbers not allowed\n");
 				return (-1);
 			}

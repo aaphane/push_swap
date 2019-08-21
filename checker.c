@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
 		}
 		i = 0;
 		ft_add_to_stack(namba, k, &stack_a);
-		ft_print_list(&stack_a);
 		free(namba);
 		ft_strdel(temp);
 		ft_putendl("\nInput command and use -1 to get outcome outcome:\n");
@@ -73,12 +72,14 @@ int main(int argc, char *argv[])
 				if ((ft_sort_list(&stack_a)) && !(stack_b))
 				{
 					ft_putchar('\n');
+				ft_putstr("\033[;036m");
 					ft_putendl("OK");
 					break ;
 				}
 				else
 				{
 					ft_putchar('\n');
+				ft_putstr("\033[0;31m");
 					ft_putendl("KO");
 					break ;
 				}
