@@ -33,7 +33,7 @@ OBJECTS =	ft_build_stack.o\
 all: $(NAME)
 
 $(NAME):
-	make -C libft/
+	@make -C libft/
 	$(CC) $(CFLAGS) -c $(SOURCES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)

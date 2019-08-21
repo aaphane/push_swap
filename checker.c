@@ -60,7 +60,7 @@ int ft_validcommand(char *str)
 			return(0);
 		i++;
 	}
-	return
+	return(-1);
 }
 
 int ft_duplicatenum(int *arr, int size)
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 	int *namba;
 	char *line;
 	char **temp;
-	t_node *stack_a;
+	t_node *stack_a = NULL;
 	t_node *stack_b = NULL;
 
 	i = 1;
@@ -130,6 +130,8 @@ int main(int argc, char *argv[])
 			exit(0);
 		}
 		i = 0;
+		ft_add_to_stack(namba, k, &stack_a);
+		ft_print_list(&stack_a);
 
 		ft_putendl("\nInput command:\n");
 		while (get_next_line(0, &line) == 1)
@@ -137,7 +139,8 @@ int main(int argc, char *argv[])
 			//	printf("line = %s\n", line);
 			if (ft_validcommand(line) == 0)
 			{
-				ft_apply_instructions(line);
+
+				ft_apply_instructions(line, &stack_a, &stack_b);
 			}
 			else
 			{
@@ -146,33 +149,6 @@ int main(int argc, char *argv[])
 				return (-1);
 			}
 		}
-		ft_putchar('\n');
-		ft_putstr("\033[0;32m");
-		ft_putstr("Stack A");
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_add_to_stack(namba, k, &stack_a);
-		ft_strdel(temp);
-		ft_putstr("\033[0;33m");
-		ft_print_list(stack_a);
-		ft_push_to_stack(&stack_b, ft_pop(&stack_a));
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_putstr("\033[0;32m");
-		ft_putstr("After pushing...");
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_putstr("Stack A");
-		ft_putstr("\033[0;36m");
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_print_list(stack_a);
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_putstr("Stack B");
-		ft_putchar('\n');
-		ft_putchar('\n');
-		ft_print_list(stack_b);
 	}
 	return (0);
 }

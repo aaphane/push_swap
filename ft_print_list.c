@@ -13,12 +13,15 @@
 #include "libft/libft.h"
 #include "push.h"
 
-void        ft_print_list(t_node *head)
+void        ft_print_list(t_node **head)
 {
-    while(head != NULL)
+    t_node  *ptr;
+
+    ptr = *head;
+    while(ptr != NULL)
     {
-        ft_putnbr(head->x);
+        ft_putnbr(ptr->x);
         ft_putchar('\n');
-        head = head->next;
+        ptr = ptr->next;
     }
 }

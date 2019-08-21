@@ -1,11 +1,21 @@
 #include "libft/libft.h"
 #include "push.h"
 
-void ft_reverse_rotate(t_node *head_copy)
+void ft_reverse_rotate(t_node **head_copy)
 {
-    while(head_copy->next)
+    // t_node *ptr;
+
+    // ptr = *head_copy;
+    if (*head_copy != NULL)
     {
-        ft_swap(&(head_copy->x), &(head_copy->next->x));
-        head_copy = head_copy->next;
+        while ((*head_copy)->next)
+        {
+            ft_swap(&((*head_copy)->x), &((*head_copy)->next->x));
+            *head_copy = (*head_copy)->next;
+        }
+    }
+    else
+    {
+        return ;
     }
 }
