@@ -43,8 +43,6 @@ int main(int argc, char *argv[])
 				else
 				{
 					free(namba);
-					ft_putstr("\033[0;31m");
-					ft_putstr("ERROR: Input is not a vild number i.e '4-', letter, etc\n");
 					exit(0);
 				}
 				j++;
@@ -55,14 +53,13 @@ int main(int argc, char *argv[])
 		if (ft_duplicatenum(namba, k) == -1)
 		{
 			free(namba);
-			ft_putstr("\033[0;31m");
-			ft_putstr("ERROR: Duplicate numbers not allowed\n");
 			exit(0);
 		}
 		i = 0;
 		ft_add_to_stack(namba, k, &stack_a);
 		ft_print_list(&stack_a);
-
+		free(namba);
+		ft_strdel(temp);
 		ft_putendl("\nInput command and use -1 to get outcome outcome:\n");
 		while (get_next_line(0, &line) == 1)
 		{
@@ -71,13 +68,12 @@ int main(int argc, char *argv[])
 
 				ft_apply_instructions(line, &stack_a, &stack_b);
 			}
-			else if ((line = "-1"))
+			else if ((ft_strcmp(line, "-1") == 0))
 			{
 				if ((ft_sort_list(&stack_a)) && !(stack_b))
 				{
 					ft_putchar('\n');
 					ft_putendl("OK");
-					//  free(stack_a);
 					break ;
 				}
 				else

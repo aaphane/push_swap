@@ -13,7 +13,10 @@ int ft_duplicatenum(int *arr, int size)
 		while (j < size)
 		{
 			if (arr[j] == arr[i] && i != j)
+			{
+				ft_putstr("ERROR: Duplicate numbers not allowed\n");
 				return (-1);
+			}
 			j++;
 		}
 		i++;
