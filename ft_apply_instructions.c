@@ -183,8 +183,23 @@ void        ft_apply_instructions(char *str, t_node **stack_a,t_node **stack_b)
         ft_print_list(stack_b);
         ft_putchar('\n');
     }
+    else if (ft_strcmp(str, "-1") == 0)
+    {
+        if((ft_sort_list(stack_a)) && !(*stack_b))
+        {
+            ft_putendl("OK");
+          //  free(stack_a);
+            exit ;
+        }
+        else
+        {
+             ft_putendl("KO");
+             exit ;
+        }
+    }
     else
     {
         return ;
     }
+    
 }
