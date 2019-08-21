@@ -30,5 +30,10 @@ void        ft_reverse_rotate(t_node **head_copy);
 void        ft_push_to_stack(t_node **head_copy, int new_data);
 int         ft_pop(t_node **head_copy);
 void        ft_apply_instructions(char *str,t_node **stack_a,t_node **stack_b);
+int			ft_sort_list(t_node **head_copy);
+int         ft_validnumber(char *str);
+int         ft_numboverflow(char *str);
+int         ft_validcommand(char *str);
+int         ft_duplicatenum(int *arr, int size);
 
 #endif

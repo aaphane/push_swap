@@ -13,76 +13,6 @@
 #include "libft/libft.h"
 #include "push.h"
 
-int ft_validnumber(char *str)
-{
-	int i;
-
-	i = 0;
-	if (str[0] == '-')
-		i++;
-	while (str[i])
-	{
-		if (((ft_isdigit(str[i])) != 1))
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
-int ft_numboverflow(char *str)
-{
-	int ai;
-	long long all;
-
-	ai = ft_atoi(str);
-	all = ft_atoll(str);
-	if (ai == all)
-		return (0);
-	else
-	{
-		return (-1);
-	}
-}
-
-int ft_validcommand(char *str)
-{
-	char **command;
-	int i;
-	char *s;
-
-	i = 0;
-	s = "sa sb ss ra rb rr pa pb rra rrb rrr";
-
-	command = ft_strsplit(s, ' ');
-	while(command[i])
-	{
-		if(ft_strcmp(command[i], str) == 0)
-			return(0);
-		i++;
-	}
-	return(-1);
-}
-
-int ft_duplicatenum(int *arr, int size)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[j] == arr[i] && i != j)
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
 int main(int argc, char *argv[])
 {
 	int i;
@@ -133,20 +63,35 @@ int main(int argc, char *argv[])
 		ft_add_to_stack(namba, k, &stack_a);
 		ft_print_list(&stack_a);
 
-		ft_putendl("\nInput command:\n");
+		ft_putendl("\nInput command and use -1 to get outcome outcome:\n");
 		while (get_next_line(0, &line) == 1)
 		{
-			//	printf("line = %s\n", line);
 			if (ft_validcommand(line) == 0)
 			{
 
 				ft_apply_instructions(line, &stack_a, &stack_b);
 			}
+			else if ((line = "-1"))
+			{
+				if ((ft_sort_list(&stack_a)) && !(stack_b))
+				{
+					ft_putchar('\n');
+					ft_putendl("OK");
+					//  free(stack_a);
+					break ;
+				}
+				else
+				{
+					ft_putchar('\n');
+					ft_putendl("KO");
+					break ;
+				}
+			}
 			else
 			{
 				ft_putstr("\033[0;31m");
 				ft_putendl("ERROR: Invalid command");
-				return (-1);
+				break ;
 			}
 		}
 	}

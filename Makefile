@@ -20,7 +20,12 @@ SOURCES =	ft_build_stack.c\
 			ft_pop.c\
 			ft_rotate.c\
 			ft_push_to_stack.c\
-			ft_apply_instructions.c
+			ft_apply_instructions.c\
+			ft_sort_list.c\
+			ft_validnumber.c\
+			ft_numboverflow.c\
+			ft_validcommand.c\
+			ft_duplicatenum.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -28,7 +33,12 @@ OBJECTS =	ft_build_stack.o\
 			ft_pop.o\
 			ft_rotate.o\
 			ft_push_to_stack.o\
-			ft_apply_instructions.o
+			ft_apply_instructions.o\
+			ft_sort_list.o\
+			ft_validnumber.o\
+			ft_numboverflow.o\
+			ft_validcommand.o\
+			ft_duplicatenum.o
 
 all: $(NAME)
 
