@@ -3,15 +3,20 @@
 
 void ft_reverse_rotate(t_node **head_copy)
 {
-    // t_node *ptr;
+    t_node *ptr;
 
-    // ptr = *head_copy;
-    if (*head_copy != NULL)
+    
+    ptr = *head_copy;
+    if (ptr != NULL)
     {
-        while ((*head_copy)->next)
+        while (ptr->next)
+         {
+             ptr = ptr->next;
+         }
+        while (ptr->prev)
         {
-            ft_swap(&((*head_copy)->x), &((*head_copy)->next->x));
-            *head_copy = (*head_copy)->next;
+            ft_swap(&(ptr->x), &(ptr->prev->x));
+            ptr = ptr->prev;
         }
     }
     else
