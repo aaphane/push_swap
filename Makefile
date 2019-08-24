@@ -12,7 +12,7 @@
 
 NAME = push.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 SOURCES =	ft_build_stack.c\
 			ft_print_list.c\
 			ft_reverse_rotate.c\
@@ -25,7 +25,12 @@ SOURCES =	ft_build_stack.c\
 			ft_validnumber.c\
 			ft_numboverflow.c\
 			ft_validcommand.c\
-			ft_duplicatenum.c
+			ft_duplicatenum.c\
+			ft_bubble_sort.c\
+			ft_list_size.c\
+			ft_find_max.c\
+			ft_find_min.c\
+			ft_median.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -38,7 +43,12 @@ OBJECTS =	ft_build_stack.o\
 			ft_validnumber.o\
 			ft_numboverflow.o\
 			ft_validcommand.o\
-			ft_duplicatenum.o
+			ft_duplicatenum.o\
+			ft_bubble_sort.o\
+			ft_list_size.o\
+			ft_find_max.o\
+			ft_find_min.o\
+			ft_median.o
 
 all: $(NAME)
 

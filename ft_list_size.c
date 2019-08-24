@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_issorted.c                                      :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 10:05:26 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/21 10:05:30 by aaphane          ###   ########.fr       */
+/*   Created: 2019/08/23 12:25:46 by aaphane           #+#    #+#             */
+/*   Updated: 2019/08/23 12:25:48 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push.h"
 
-int			ft_sort_list(t_node **head_copy)
+int 	ft_list_size(t_node **head)
 {
-	t_node *ptr;
-	
-	ptr = *head_copy;
-	while(ptr->next)
+	t_node *current;
+	int size;
+
+	current = *head;
+	size = 0;
+	while(current->next != NULL)
 	{
-		if(ptr->x < ptr->next->x)
-		{
-			ptr = ptr->next;
-		}
-		else
-			return(-1);
+		current = current->next;
+		size++;
 	}
-	return(0);
+	return(size);
 }

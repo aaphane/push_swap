@@ -14,6 +14,7 @@ int ft_validnumber(char *str)
 		{
 			ft_putstr("\033[0;31m");
 			ft_putstr("ERROR: Input is not a vild number i.e '4-', letter, etc\n");
+			ft_putstr("\e[0m");
 			return (-1);
 		}
 		i++;
