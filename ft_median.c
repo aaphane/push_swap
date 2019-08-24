@@ -1,7 +1,7 @@
 #include "libft/libft.h"
 #include "push.h"
 
-int ft_median(t_node *head)
+int ft_median(t_node **head)
 {
 	int median_val;
 	int size;
@@ -9,15 +9,15 @@ int ft_median(t_node *head)
 	int i;
 	int j;
 
-	i = 1;
-	current = head;
+	i = 0;
+	current = *head;
 	size = ft_list_size(&current);
 
 	if (size % 2 == 0)
 		j = size / 2;
 	else
 		j = (size / 2) + 1;
-	while (current->next != NULL && (i <= j))
+	while (current && (i <= j))
 	{
 		if (i == j)
 		{

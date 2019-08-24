@@ -41,6 +41,7 @@ void	    ft_sort_two(t_node **head);
 int         ft_bubble_sort(t_node **head_copy);
 int			ft_find_max(t_node *head);
 int			ft_find_min(t_node *head);
-int			ft_median(t_node *head);
+int			ft_median(t_node **head);
+t_node		*ft_get_copy(t_node *head_copy);
 
 #endif
