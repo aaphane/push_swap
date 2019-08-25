@@ -55,13 +55,14 @@ OBJECTS =	ft_build_stack.o\
 all: $(NAME)
 
 $(NAME):
-	@make -C libft/
-	$(CC) $(CFLAGS) -c $(SOURCES)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@ make -C libft/
+	@$(CC) $(CFLAGS) -c $(SOURCES)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
+	@gcc checker.c -Wall -Werror -Wextra push.a libft/libft.a -o checker
 .PHONY: clean
 clean:
-	rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 re: fclean all

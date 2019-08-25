@@ -128,13 +128,13 @@ OBJECTS =	ft_atoi.o\
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SOURCES)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@$(CC) $(CFLAGS) -c $(SOURCES)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 .PHONY: clean
 clean:
-	rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 fclean: clean
-	rm -f $(NAME)
-	rm -rf get_next_line.h.gch
+	@rm -f $(NAME)
+	@rm -rf get_next_line.h.gch
 re: fclean all
