@@ -51,4 +51,5 @@ void		ft_sort_three(t_node **head)
 		ft_swap_nodes(&current);
 		ft_putendl("sa");
 	}
+	
 }
