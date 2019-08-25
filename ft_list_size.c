@@ -19,7 +19,7 @@ int 	ft_list_size(t_node **head)
 	int size;
 
 	current = *head;
-	size = 0;
+	size = 1;
 	while(current->next != NULL)
 	{
 		current = current->next;

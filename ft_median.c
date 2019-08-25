@@ -9,7 +9,7 @@ int ft_median(t_node **head)
 	int i;
 	int j;
 
-	i = 0;
+	i = 1;
 	current = *head;
 	size = ft_list_size(&current);
 

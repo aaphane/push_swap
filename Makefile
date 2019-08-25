@@ -31,7 +31,8 @@ SOURCES =	ft_build_stack.c\
 			ft_find_max.c\
 			ft_find_min.c\
 			ft_median.c\
-			ft_get_copy.c
+			ft_get_copy.c\
+			ft_sort_three.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -50,7 +51,8 @@ OBJECTS =	ft_build_stack.o\
 			ft_find_max.o\
 			ft_find_min.o\
 			ft_median.o\
-			ft_get_copy.o
+			ft_get_copy.o\
+			ft_sort_three.o
 
 all: $(NAME)
 
