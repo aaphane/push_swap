@@ -19,7 +19,6 @@ void ft_apply_instructions(char *str, t_node **stack_a, t_node **stack_b)
     {
         if (stack_a)
             ft_swap_nodes(stack_a);
-            ft_print_list(stack_a);
     }
     else if (ft_strcmp(str, "sb") == 0)
     {
@@ -37,7 +36,6 @@ void ft_apply_instructions(char *str, t_node **stack_a, t_node **stack_b)
     {
         if (stack_a)
             ft_rotate(stack_a);
-            ft_print_list(stack_a);
     }
     else if (ft_strcmp(str, "rb") == 0)
     {

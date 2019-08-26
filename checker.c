@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 
 		i = 1;
 		k = 0;
-
 		namba = (int *)malloc(sizeof(int) * (argc - 1));
 		if (argc > 1)
 		{
@@ -57,19 +56,15 @@ int main(int argc, char *argv[])
 				ft_add_to_stack(namba, k, &stack_a);
 				free(namba);
 				ft_strdel(temp);
-				ft_putendl("\nInput command and use -1 to get outcome outcome:\n");
 				while (get_next_line(0, &line) == 1)
 				{
 						if (ft_validcommand(line) == 0)
-						{
-
 								ft_apply_instructions(line, &stack_a, &stack_b);
-						}
 				}
-				if ((ft_sort_list(&stack_a)) && !(stack_b))
-						ft_putendl("OK");
+				if ((ft_sort_list(&stack_a) == 0) && !(stack_b))
+						ft_putendl("\nOK");
 				else
-					ft_putendl("KO");
+					ft_putendl("\nKO");
 		}
 		else
 			ft_putendl("ERROR: Invalid command");
