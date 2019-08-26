@@ -42,5 +42,7 @@ int			ft_find_max(t_node *head);
 int			ft_find_min(t_node *head);
 int			ft_median(t_node **head);
 t_node		*ft_get_copy(t_node *head_copy);
+void        ft_sort_four(t_node **stack_a, t_node **stack_b);
+void        ft_sort_two(t_node **head);
 
 #endif

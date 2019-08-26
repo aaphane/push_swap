@@ -32,7 +32,9 @@ SOURCES =	ft_build_stack.c\
 			ft_find_min.c\
 			ft_median.c\
 			ft_get_copy.c\
-			ft_sort_three.c
+			ft_sort_three.c\
+			ft_sort_four.c\
+			ft_sort_two.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -52,7 +54,9 @@ OBJECTS =	ft_build_stack.o\
 			ft_find_min.o\
 			ft_median.o\
 			ft_get_copy.o\
-			ft_sort_three.o
+			ft_sort_three.o\
+			ft_sort_four.o\
+			ft_sort_two.o
 
 all: $(NAME)
 
@@ -62,6 +66,7 @@ $(NAME):
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@gcc checker.c -Wall -Werror -Wextra push.a libft/libft.a -o checker
+	@gcc ft_push_swap.c push.a libft/libft.a -o push_swap
 .PHONY: clean
 clean:
 	@rm -f $(OBJECTS)

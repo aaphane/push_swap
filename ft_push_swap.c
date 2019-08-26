@@ -61,20 +61,12 @@ int 		main(int argc, char *argv[])
 		ft_add_to_stack(namba, k, &stack_a);
 		free(namba);
 		ft_strdel(temp);
-		if(ft_list_size(&stack_a) == 3)
-		{
-			ft_sort_three(&stack_a);
-		}
-		else if (ft_list_size(&stack_a) == 2)
-		{
-			ft_sort_two(&stack_a);
-		}
-		else
-		{
-			ft_putendl("chowed");
-		}
-		
-		
+		//ft_sort_two(&stack_a);
+		ft_sort_four(&stack_a, &stack_b);
+		ft_putendl("\n\nStack A\n");
+		ft_print_list(&stack_a);
+		ft_putendl("\nStack B\n");
+		ft_print_list(&stack_b);
 	}
 	return(0);
 }
