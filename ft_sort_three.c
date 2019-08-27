@@ -19,7 +19,6 @@ void		ft_sort_three(t_node **head)
 	t_node *current;
 
 	current = *head;
-
 	if ((current->x < current->next->x) && (current->next->x < current->next->next->x) && (current->next->next->x > current->x))
 		return ;
 	else if ((current->x > current->next->x) && (current->next->x > current->next->next->x) && (current->next->next->x < current->x))

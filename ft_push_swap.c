@@ -18,6 +18,7 @@ int 		main(int argc, char *argv[])
 	int i;
 	int j;
 	int k;
+	int median;
 	int *namba;
 	int size;
 	char **temp;
@@ -61,12 +62,16 @@ int 		main(int argc, char *argv[])
 		ft_add_to_stack(namba, k, &stack_a);
 		free(namba);
 		ft_strdel(temp);
+		median = ft_median(&stack_a);
+		ft_putendl("Median is ..\n");
+		ft_putnbr(median);
+		ft_putendl("\n");
 		//ft_sort_two(&stack_a);
-		ft_sort_four(&stack_a, &stack_b);
-		ft_putendl("\n\nStack A\n");
-		ft_print_list(&stack_a);
-		ft_putendl("\nStack B\n");
-		ft_print_list(&stack_b);
-	}
+	 	ft_sort_five(&stack_a, &stack_b);
+	 	ft_putendl("\n\nStack A\n");
+	 	ft_print_list(&stack_a);
+	 	ft_putendl("\nStack B\n");
+	 	ft_print_list(&stack_b);
+	 }
 	return(0);
 }

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_four.c                                     :+:      :+:    :+:   */
+/*   ft_sort_five.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/26 21:39:51 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/26 21:39:53 by aaphane          ###   ########.fr       */
+/*   Created: 2019/08/27 09:52:31 by aaphane           #+#    #+#             */
+/*   Updated: 2019/08/27 09:52:33 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push.h"
 
-void    ft_sort_four(t_node **stack_a, t_node **stack_b)
+void    ft_sort_five(t_node **stack_a, t_node **stack_b)
 {
     t_node *current = NULL;
     int median;
@@ -28,16 +28,17 @@ void    ft_sort_four(t_node **stack_a, t_node **stack_b)
     {   current = *stack_a;
         if(current->x < median)
         {
-            ft_putnbr(current->x);
-            ft_putchar('\n');
             ft_push_to_stack(stack_b, ft_pop(stack_a));
-            ft_putendl("pb");
+			ft_putendl("pb");
         }
         else
             ft_rotate(stack_a);
         i++;
     }
     ft_sort_three(stack_a);
+	ft_sort_two(stack_b);
     ft_push_to_stack(stack_a, ft_pop(stack_b));
-    ft_putendl("pa");
+	ft_putendl("pa");
+	ft_push_to_stack(stack_a, ft_pop(stack_b));
+	ft_putendl("pa");
 }

@@ -34,7 +34,8 @@ SOURCES =	ft_build_stack.c\
 			ft_get_copy.c\
 			ft_sort_three.c\
 			ft_sort_four.c\
-			ft_sort_two.c
+			ft_sort_two.c\
+			ft_sort_five.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -56,7 +57,8 @@ OBJECTS =	ft_build_stack.o\
 			ft_get_copy.o\
 			ft_sort_three.o\
 			ft_sort_four.o\
-			ft_sort_two.o
+			ft_sort_two.o\
+			ft_sort_five.o
 
 all: $(NAME)
 
@@ -72,4 +74,6 @@ clean:
 	@rm -f $(OBJECTS)
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f checker push_swap
+	@make fclean -C libft/
 re: fclean all
