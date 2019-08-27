@@ -46,5 +46,6 @@ void        ft_sort_four(t_node **stack_a, t_node **stack_b);
 void        ft_sort_two(t_node **head);
 void        ft_sort_five(t_node **stack_a, t_node **stack_b);
 void        ft_sort_ten(t_node **stack_a, t_node **stack_b);
+int         ft_index(t_node **head, int number);
 
 #endif
