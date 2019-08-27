@@ -6,7 +6,7 @@
 /*   By: ftvuser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/09 20:07:44 by ftvuser           #+#    #+#             */
-/*   Updated: 2019/08/09 20:07:47 by ftvuser          ###   ########.fr       */
+/*   Updated: 2019/08/27 16:01:43 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long		ft_atoll(const char *str)
 {
-	long	i;
+	long			i;
 	long long		num;
 
 	i = 0;

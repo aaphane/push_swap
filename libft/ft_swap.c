@@ -6,13 +6,13 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 08:07:54 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/19 08:07:56 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/08/27 15:57:38 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void        ft_swap(int *a, int *b)
+void		ft_swap(int *a, int *b)
 {
 	int tmp_a;
 

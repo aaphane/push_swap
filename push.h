@@ -45,5 +45,6 @@ t_node		*ft_get_copy(t_node *head_copy);
 void        ft_sort_four(t_node **stack_a, t_node **stack_b);
 void        ft_sort_two(t_node **head);
 void        ft_sort_five(t_node **stack_a, t_node **stack_b);
+void        ft_sort_ten(t_node **stack_a, t_node **stack_b);
 
 #endif

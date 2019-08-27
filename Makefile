@@ -35,7 +35,8 @@ SOURCES =	ft_build_stack.c\
 			ft_sort_three.c\
 			ft_sort_four.c\
 			ft_sort_two.c\
-			ft_sort_five.c
+			ft_sort_five.c\
+			ft_sort_ten.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -58,7 +59,8 @@ OBJECTS =	ft_build_stack.o\
 			ft_sort_three.o\
 			ft_sort_four.o\
 			ft_sort_two.o\
-			ft_sort_five.o
+			ft_sort_five.o\
+			ft_sort_ten.o
 
 all: $(NAME)
 

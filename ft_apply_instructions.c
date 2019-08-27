@@ -6,16 +6,16 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 09:48:08 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/19 09:48:11 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/08/27 16:28:08 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 #include "libft/libft.h"
 
-void ft_apply_instructions(char *str, t_node **stack_a, t_node **stack_b)
+void		ft_apply_instructions(char *str, t_node **stack_a, t_node **stack_b)
 {
-    if (ft_strcmp(str, "sa") == 0)
+	if (ft_strcmp(str, "sa") == 0)
     {
         if (stack_a)
             ft_swap_nodes(stack_a);

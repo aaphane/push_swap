@@ -15,9 +15,7 @@
 
 int main(int argc, char *argv[])
 {
-		int i;
-		int j;
-		int k;
+		int i, j, k;
 		int *namba;
 		char *line;
 		char **temp;
@@ -36,14 +34,12 @@ int main(int argc, char *argv[])
 						while (temp[j])
 						{
 								if (ft_validnumber(temp[j]) == 0 && ft_numboverflow(temp[j]) == 0)
-										namba[k] = ft_atoi(temp[j]);
+										namba[k++] = ft_atoi(temp[j++]);
 								else
 								{
 										free(namba);
 										exit(0);
 								}
-								j++;
-								k++;
 						}
 						i++;
 				}
@@ -52,7 +48,6 @@ int main(int argc, char *argv[])
 						free(namba);
 						exit(0);
 				}
-				i = 0;
 				ft_add_to_stack(namba, k, &stack_a);
 				free(namba);
 				ft_strdel(temp);
@@ -60,13 +55,16 @@ int main(int argc, char *argv[])
 				{
 						if (ft_validcommand(line) == 0)
 								ft_apply_instructions(line, &stack_a, &stack_b);
+						else
+						{
+							ft_putendl("ERROR: Invalid command");
+							break ;
+						}
 				}
 				if ((ft_sort_list(&stack_a) == 0) && !(stack_b))
-						ft_putendl("\nOK");
+						ft_putendl("OK");
 				else
-					ft_putendl("\nKO");
+					ft_putendl("KO");
 		}
-		else
-			ft_putendl("ERROR: Invalid command");
 return (0);
 }

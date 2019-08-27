@@ -32,7 +32,10 @@ void    ft_sort_five(t_node **stack_a, t_node **stack_b)
 			ft_putendl("pb");
         }
         else
+		{
             ft_rotate(stack_a);
+			ft_putendl("ra");
+		}
         i++;
     }
     ft_sort_three(stack_a);
