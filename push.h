@@ -49,5 +49,6 @@ void        ft_sort_ten(t_node **stack_a, t_node **stack_b);
 int         ft_index(t_node **head, int number);
 int         ft_rev_bubble_sort(t_node **head_copy);
 int         ft_rev_index(t_node **head, int number);
+int         ft_third_quartile(t_node **head);
 
 #endif
