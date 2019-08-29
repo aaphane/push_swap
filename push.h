@@ -50,5 +50,8 @@ int         ft_index(t_node **head, int number);
 int         ft_rev_bubble_sort(t_node **head_copy);
 int         ft_rev_index(t_node **head, int number);
 int         ft_third_quartile(t_node **head);
+int         ft_real_median(t_node **head);
+void        ft_sort_klipa(t_node **stack_a, t_node **stack_b);
+t_node		*ft_get_rev_copy(t_node *head_copy);
 
 #endif
