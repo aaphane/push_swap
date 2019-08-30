@@ -65,14 +65,16 @@ int 		main(int argc, char *argv[])
 		i = 0;
 		ft_add_to_stack(namba, k, &stack_a);
 		free(namba);
+		ft_sort_ten(&stack_a, &stack_b);
+//	ft_sort_twenty(&stack_a, &stack_b);
 		// ft_strdel(temp);
 		// copy = ft_get_rev_copy(stack_a);
 		// ft_print_list(&copy);
-		ft_sort_klipa(&stack_a, &stack_b);
-		// ft_putendl("\nStack A\n");
-		// ft_print_list(&stack_a);
-		// ft_putendl("\nStack B\n");
-		// ft_print_list(&stack_b);
+		//ft_sort_klipa(&stack_a, &stack_b);
+		 ft_putendl("\nStack A\n");
+		 ft_print_list(&stack_a);
+		 ft_putendl("\nStack B\n");
+		 ft_print_list(&stack_b);
 		// tquart = ft_third_quartile(&stack_a);
 		// ft_putstr("\nthird_q = ");
 		// ft_putnbr(tquart);
@@ -86,11 +88,11 @@ int 		main(int argc, char *argv[])
 	//ft_rev_index(&stack_a, 16);
 	// 	ft_sort_four(&stack_a, &stack_b);
 	//  	ft_sort_five(&stack_a, &stack_b);
-	//  //	ft_sort_ten(&stack_a, &stack_b);
-	//  	ft_putendl("\n\nStack A\n");
-//	 	ft_print_list(&stack_a);
-	//  	ft_putendl("\nStack B\n");
-	//  	ft_print_list(&stack_b);
+		// ft_sort_ten(&stack_a, &stack_b);
+	  	// ft_putendl("\n\nStack A\n");
+	 	// ft_print_list(&stack_a);
+	  	// ft_putendl("\nStack B\n");
+	  	// ft_print_list(&stack_b);
 	 }
 	return(0);
 }

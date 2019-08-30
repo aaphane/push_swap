@@ -15,9 +15,11 @@
 
 void        ft_sort_two(t_node **head)
 {
-    if(ft_sort_list(head) == -1)
-        return ;
-    else
+    if(ft_sort_list(head) == 0)
+    {
         ft_swap_nodes(head);
         ft_putendl("sa");
+    }
+    else
+        return ;
 }

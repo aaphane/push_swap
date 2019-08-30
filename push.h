@@ -49,9 +49,13 @@ void        ft_sort_ten(t_node **stack_a, t_node **stack_b);
 int         ft_index(t_node **head, int number);
 int         ft_rev_bubble_sort(t_node **head_copy);
 int         ft_rev_index(t_node **head, int number);
+int         ft_first_quartile(t_node **head);
 int         ft_third_quartile(t_node **head);
 int         ft_real_median(t_node **head);
 void        ft_sort_klipa(t_node **stack_a, t_node **stack_b);
 t_node		*ft_get_rev_copy(t_node *head_copy);
+void        ft_key_sort_five(t_node **stack_a, t_node **stack_b);
+void        ft_sort_twenty(t_node **stack_a, t_node **stack_b);
+void        ft_rev_sort_five(t_node **stack_a, t_node **stack_b);
 
 #endif

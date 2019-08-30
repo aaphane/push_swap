@@ -42,8 +42,10 @@ SOURCES =	ft_build_stack.c\
 			ft_rev_index.c\
 			ft_third_quartile.c\
 			ft_real_median.c\
-			ft_sort_klipa.c\
-			ft_get_rev_copy.c
+			ft_key_sort_five.c\
+			ft_sort_twenty.c\
+			ft_first_quartile.c\
+			ft_rev_sort_five.c
 OBJECTS =	ft_build_stack.o\
 			ft_print_list.o\
 			ft_reverse_rotate.o\
@@ -71,10 +73,12 @@ OBJECTS =	ft_build_stack.o\
 			ft_index.o\
 			ft_rev_bubble_sort.o\
 			ft_rev_index.o\
+			ft_first_quartile.o\
 			ft_third_quartile.o\
 			ft_real_median.o\
-			ft_sort_klipa.o\
-			ft_get_rev_copy.o
+			ft_key_sort_five.o\
+			ft_sort_twenty.o\
+			ft_rev_sort_five.o
 
 all: $(NAME)
 
