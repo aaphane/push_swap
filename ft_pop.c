@@ -6,7 +6,7 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 07:19:21 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/27 15:43:48 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/09/06 19:56:54 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ int		ft_pop(t_node **head_copy)
 		*head_copy = (*head_copy)->next;
 		(*head_copy)->prev = NULL;
 		current->next = NULL;
+		free(current);
 	}
 	else
 	{
 		temp = current->x;
+		free(current);
 		*head_copy = NULL;
 	}
 	return (temp);

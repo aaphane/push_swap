@@ -6,14 +6,14 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 15:37:24 by aaphane           #+#    #+#             */
-/*   Updated: 2019/08/27 15:40:47 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/09/04 14:09:39 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push.h"
 
-void		ft_swap_nodes(t_node **head_copy)
+void	ft_swap_nodes(t_node **head_copy)
 {
 	t_node	*ptr;
 
