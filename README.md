@@ -27,7 +27,7 @@ rra : reverse rotate a - shift down all elements of stack a by 1. The flast elem
 rrb : reverse rotate b - shift down all elements of stack b by 1. The flast element becomes the first one.
 rrr : rra and rrb at the same time.
 
-# illustration of the effect of some of these instructions,
+# Illustration of the effect of some of these instructions
 ----------------------------------------------------------------------------------------------------------
 Init a and b:
 2
