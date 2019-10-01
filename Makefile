@@ -6,7 +6,7 @@
 #    By: aaphane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/19 07:51:06 by aaphane           #+#    #+#              #
-#    Updated: 2019/09/04 14:16:27 by aaphane          ###   ########.fr        #
+#    Updated: 2019/10/01 02:44:37 by ftvuser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SOURCES =	ft_build_stack.c\
 			ft_sort_four.c\
 			ft_sort_two.c\
 			ft_sort_five.c\
-			ft_print_list.c
+			ft_print_list.c\
+			min_and_max.c\
+			sort_wanandred.c\
+			helpers.c\
+			helpers2.c\
+			fafandred.c
 OBJECTS =	ft_build_stack.o\
 			ft_reverse_rotate.o\
 			ft_swap_nodes.o\
@@ -54,7 +59,12 @@ OBJECTS =	ft_build_stack.o\
 			ft_sort_four.o\
 			ft_sort_two.o\
 			ft_sort_five.o\
-			ft_print_list.o
+			ft_print_list.o\
+			min_and_max.o\
+			sort_wanandred.o\
+			helpers.o\
+			helpers2.o\
+			fafandred.o
 
 all: $(NAME)
 

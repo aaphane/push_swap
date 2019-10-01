@@ -6,7 +6,7 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/09 14:26:13 by aaphane           #+#    #+#             */
-/*   Updated: 2019/09/04 16:09:35 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/10/01 02:43:06 by ftvuser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,20 @@ void				ft_key_sort_five(t_node **stack_a, t_node **stack_b);
 void				ft_sort_twenty(t_node **stack_a, t_node **stack_b);
 void				ft_rev_sort_five(t_node **stack_a, t_node **stack_b);
 void				ft_five_things(t_node **stack_a, t_node **stack_b);
+void				intv(t_node **stack_a, t_node **stack_b, int min, int max);
+void				create_chunks(t_node **stack_a, t_node **stack_b);
+int					find_min_max(t_node *stack, char *flag);
+void				auto_pa(t_node **stack_a, t_node **stack_b);
+void				auto_pb(t_node **stack_a, t_node **stack_b);
+void				auto_rb(t_node **stack_b);
+void				auto_rrb(t_node **stack_b);
+void				auto_sa(t_node **stack_a);
+void				auto_ra(t_node **stack_a);
+void				auto_rra(t_node **stack_a);
+void				auto_sa_rra(t_node **stack_a);
+void				sort_hundred(t_node **stack_a, t_node **stack_b);
+void				auto_sa_ra(t_node **stack_a);
+void				eleven_chunks(t_node **stack_a, t_node **stack_b);
+void				sort_fafandred(t_node **stack_a, t_node **stack_b);
 
 #endif

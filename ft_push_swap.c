@@ -6,7 +6,7 @@
 /*   By: aaphane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 07:29:44 by aaphane           #+#    #+#             */
-/*   Updated: 2019/09/07 06:18:42 by aaphane          ###   ########.fr       */
+/*   Updated: 2019/10/01 02:41:14 by aaphane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,7 @@ void	another_one(char **temp, int *namba, int *k)
 
 void	sort_them(t_node **stack_a, t_node **stack_b, int k)
 {
-	if (k == 2)
-	{
-		if (ft_sort_list(stack_a) == 0)
-			return ;
-		else
-		{
-			ft_swap_nodes(stack_a);
-			ft_putendl("sa");
-		}
-	}
-	else if (k == 3)
+	if (k == 3)
 		ft_sort_three(stack_a);
 	else if (k == 5)
 	{
@@ -59,6 +49,10 @@ void	sort_them(t_node **stack_a, t_node **stack_b, int k)
 		else
 			ft_sort_five(stack_a, stack_b);
 	}
+	else if (k > 5 && k <= 100)
+		sort_hundred(stack_a, stack_b);
+	else if (k > 100 && k <= 500)
+		sort_fafandred(stack_a, stack_b);
 	else
 		return ;
 }
