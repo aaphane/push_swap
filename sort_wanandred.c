@@ -49,7 +49,7 @@ void		create_chunks(t_node **stack_a, t_node **stack_b)
 
 	min = find_min_max(*stack_a, "min of the list");
 	max = find_min_max(*stack_a, "max of the list");
-	dividend = ((min - max) / 5);
+	dividend = ((max - min) / 5);
 	intv(stack_a, stack_b, min, (min + dividend));
 	intv(stack_a, stack_b, (min + dividend + 1), (min + (dividend * 2)));
 	intv(stack_a, stack_b, (min + (dividend * 2) + 1), (min + (dividend * 3)));
