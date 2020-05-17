@@ -35,6 +35,18 @@ int		ft_validcommand(char *str)
 			free(command);
 			return (0);
 		}
+		else
+		{	
+			i = 0;
+			while (i < 11)
+			{
+				ft_strdel(&command[i]);
+				i++;
+			}
+			free(command);
+			return (0);
+		}
+		
 		i++;
 	}
 	return (-1);

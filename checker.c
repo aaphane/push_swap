@@ -47,6 +47,7 @@ void	printoutput(char *line, t_node *stack_a, t_node *stack_b)
 		else
 		{
 			ft_putendl("ERROR: Invalid Command");
+			free(line);
 			exit(0);
 		}
 		free(line);
