@@ -19,6 +19,7 @@ typedef	struct		s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }					t_node;
+void				clear_stack(t_node **stack);
 void				sort_basic_2(t_node **head);
 void				ft_print_list(t_node **head);
 void				ft_add_to_stack(int *nums, int size, t_node **current);

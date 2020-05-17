@@ -77,7 +77,7 @@ $(NAME):
 	@$(CC) $(CFLAGS) -c $(SOURCES)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-	@gcc checker.c -Wall -Werror -Wextra push.a libft/libft.a -o checker
+	@gcc -g -Og -std=gnu99 checker.c -Wall -Werror -Wextra push.a libft/libft.a -o checker
 	@gcc ft_push_swap.c push.a libft/libft.a -o push_swap
 .PHONY: clean
 clean:

@@ -55,6 +55,27 @@ void	printoutput(char *line, t_node *stack_a, t_node *stack_b)
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");
+	clear_stack(&stack_a);
+	clear_stack(&stack_b);
+}
+
+void			clear_stack(t_node **stack)
+{
+	t_node	*tmp;
+
+	if (!*stack)
+		return ;
+	while (*stack)
+	{
+		tmp = *stack;
+		*stack = tmp->next;
+		if (tmp)
+		{
+			tmp->next = NULL;
+			tmp->prev = NULL;
+			free(tmp);
+		}
+	}
 }
 
 void	numbercheck(int argc, char **argv, int *namba)
