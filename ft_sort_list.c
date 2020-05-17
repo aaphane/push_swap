@@ -18,6 +18,8 @@ int		ft_sort_list(t_node **head_copy)
 	t_node *ptr;
 
 	ptr = *head_copy;
+	if (ptr == NULL)
+		return -1;
 	while (ptr->next)
 	{
 		if (ptr->x < ptr->next->x)
