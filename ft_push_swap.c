@@ -40,8 +40,17 @@ void	another_one(char **temp, int *namba, int *k)
 
 void	sort_them(t_node **stack_a, t_node **stack_b, int k)
 {
-	if (k == 3)
+	if (k == 2)
+		sort_basic_2(stack_a);
+	else if (k == 3)
 		ft_sort_three(stack_a);
+	else if (k == 4)
+	{
+		if (ft_sort_list(stack_a) == 0)
+			return ;
+		else
+			ft_sort_four(stack_a, stack_b);
+	}	
 	else if (k == 5)
 	{
 		if (ft_sort_list(stack_a) == 0)

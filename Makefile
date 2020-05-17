@@ -14,6 +14,8 @@ NAME = push.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g
 SOURCES =	ft_build_stack.c\
+			ft_basic_2.c\
+			ft_sort_four.c\
 			ft_reverse_rotate.c\
 			ft_swap_nodes.c\
 			ft_pop.c\
@@ -40,6 +42,8 @@ SOURCES =	ft_build_stack.c\
 			helpers2.c\
 			fafandred.c
 OBJECTS =	ft_build_stack.o\
+			ft_basic_2.o\
+			ft_sort_four.o\
 			ft_reverse_rotate.o\
 			ft_swap_nodes.o\
 			ft_pop.o\

@@ -19,7 +19,7 @@ typedef	struct		s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }					t_node;
-
+void				sort_basic_2(t_node **head);
 void				ft_print_list(t_node **head);
 void				ft_add_to_stack(int *nums, int size, t_node **current);
 void				ft_swap_nodes(t_node **head_copy);
@@ -74,5 +74,6 @@ void				sort_hundred(t_node **stack_a, t_node **stack_b);
 void				auto_sa_ra(t_node **stack_a);
 void				eleven_chunks(t_node **stack_a, t_node **stack_b);
 void				sort_fafandred(t_node **stack_a, t_node **stack_b);
+void				ft_four_things(t_node **stack_a, t_node **stack_b);
 
 #endif

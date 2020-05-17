@@ -46,4 +46,6 @@ void	ft_sort_four(t_node **stack_a, t_node **stack_b)
 			ft_putendl("ra");
 		}
 	}
+	ft_push_to_stack(stack_a, ft_pop(stack_b));
+	ft_putendl("pa");
 }
