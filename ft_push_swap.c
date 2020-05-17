@@ -60,7 +60,7 @@ void	sort_them(t_node **stack_a, t_node **stack_b, int k)
 	}
 	else if (k > 5 && k <= 100)
 		sort_hundred(stack_a, stack_b);
-	else if (k > 100 && k <= 500)
+	else if (k > 100)
 		sort_fafandred(stack_a, stack_b);
 	else
 		return ;
